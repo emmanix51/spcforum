@@ -46,7 +46,7 @@ class AuthController extends Controller
         $validated = request()->validate([
 
             'email' => 'required|email',
-            'password' => 'required|min:8' //form input dapat naay _confirmation ang name na ganahan iconfirm
+            'password' => 'required|min:6' //form input dapat naay _confirmation ang name na ganahan iconfirm
         ]);
 
         if (auth()->attempt($validated)) {
