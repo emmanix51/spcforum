@@ -47,7 +47,7 @@
         }
         @endphp
         <li class="">
-            <a href="{{ route('users.show') }}" class="hover:text-spcmain flex flex-row items-center">
+            <a href="{{ route('threads.create') }}" class="hover:text-spcmain flex flex-row items-center">
                 create
             </a>
         </li>
