@@ -8,7 +8,7 @@
 </div>
 @endif
 @include('shared.search-bar')
-<a href="index.html" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
+<a href="{{ route('dashboard') }}" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
     <form action="{{route('threads.destroy',$thread->id)}}" method="post">
