@@ -6,8 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PIE</title>
     <link rel="stylesheet" href="./assets/css/dashboard.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  spcmain: "#630809",
+                },
+              },
+            },
+          };
+    </script>
 </head>
 <style>
+    * {
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+    }
+
     .navBar {
         margin: 0px auto 0px auto;
         width: 95%;
@@ -30,8 +51,7 @@
 
     .nav-opt {
         font-size: 14px;
-        width: 50px;
-        margin: auto 10px auto 10px;
+        margin: auto 15px;
     }
 
     .logo-Name {
@@ -104,6 +124,7 @@
     }
 
     li {
+        list-style: none;
         font-size: 14px;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
@@ -142,36 +163,41 @@
 <body>
     <div class="navBar">
         <div class="logo">
-            <img src="./assets/images/logo.png" alt="Logo" class="nav-Logo" />
-            <p class="logo-Name">PIE</p>
+            <img src="{{asset('spclogo.jpg')}}" alt="Logo" class="nav-Logo" />
+            <p class="logo-Name">SPC department forums</p>
         </div>
         <div class="nav-cont">
-            <a href="profile.html" class="nav-opt">Profile</a>
-            <a href="index.html" class="nav-opt">Logout</a>
+            <a href="{{ route('threads.create') }}" class="hover:text-spcmain flex flex-row items-center">
+                <button type="submit"
+                    class="h-10 w-20 text-white rounded-lg bg-spcmain hover:bg-white hover:border-2 hover:text-black">
+                    Create
+                </button>
+            </a>
+            <a href="{{route('dashboard')}}" class="nav-opt">Dashboard</a>
+            <a href="{{route('users.show')}}" class="nav-opt">Profile</a>
+            <a href="{{route('logout')}}" class="nav-opt">Logout</a>
         </div>
     </div>
     <div class="container-General">
         <div class="left-Container">
-            <div class="Lcontainer-logo">
-                <img src="./assets/images/logo.png" alt="Register" class="Lcont-img" />
-                <p>Dashboard</p>
-            </div>
+
             <div class="departments">
                 <p class="Lcontent">Departments</p>
                 <ul>
-                    <li class="list-left"><a href="ccs.html">CCS</a></li>
-                    <li class="list-left"><a href="coc.html">COC</a></li>
-                    <li class="list-lef1"><a href="coe.html">COE</a></li>
-                    <li class="list-left"><a href="cas.html">CAS</a></li>
-                    <li class="list-left"><a href="ced.html">CED</a></li>
+                    <li class="list-left"><a href="{{route('department','ccs')}}">CCS</a></li>
+                    <li class="list-left"><a href="{{route('department','coc')}}">COC</a></li>
+                    <li class="list-left"><a href="{{route('department','coe')}}">COE</a></li>
+                    <li class="list-left"><a href="{{route('department','cas')}}">CAS</a></li>
+                    <li class="list-left"><a href="{{route('department','ced')}}">CED</a></li>
+                    <li class="list-left"><a href="{{route('department','cba')}}">CBA</a></li>
                 </ul>
             </div>
         </div>
         <div class="right-Container">
             <div class="rContainer-Content">
-                <img src="./assets/images/welcome.png" alt="Welcome Picture" class="welcome-Img" />
+                <img src="{{asset('welcome.png')}}" alt="Welcome Picture" class="welcome-Img" />
                 <p>
-                    Welcome to PIE, your virtual hub for all things St. Peters College!
+                    Welcome to spcforum, your virtual hub for all things St. Peters College!
                     Whether you're an alumni reminiscing about the good old days, a
                     current student eager to stay updated, or a prospective student
                     seeking insights into campus life, PIE is your go-to destination.

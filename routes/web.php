@@ -30,3 +30,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/profile', [Usercontroller::class, 'show'])->name('users.show');
 
 Route::get('/departments', [ThreadController::class, 'departments'])->name('departments');
+Route::get('/departments/{department}', [ThreadController::class, 'department'])->name('department');
