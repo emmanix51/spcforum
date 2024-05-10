@@ -48,7 +48,10 @@
         @endphp
         <li class="">
             <a href="{{ route('threads.create') }}" class="hover:text-spcmain flex flex-row items-center">
-                create
+                <button type="submit"
+                    class="h-10 w-20 text-white rounded-lg bg-spcmain hover:bg-white hover:border-2 hover:text-black">
+                    Create
+                </button>
             </a>
         </li>
         <li class="">
