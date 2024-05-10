@@ -55,6 +55,11 @@
             </a>
         </li>
         <li class="">
+            <a href="{{ route('departments') }}" class="hover:text-spcmain flex flex-row items-center">
+                <p>Departments</p>
+            </a>
+        </li>
+        <li class="">
             <a href="{{ route('users.show') }}" class="hover:text-spcmain flex flex-row items-center">
                 <img class="w-12 mr-2" src="{{ asset($collegelogo) }}" alt="{{ $college }} Logo" class="logo" />
                 <p>{{ Auth::user()->name }} Profile</p>

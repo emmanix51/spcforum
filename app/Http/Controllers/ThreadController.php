@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ThreadController extends Controller
 {
+
+    public function departments()
+    {
+        return view('threads.departments');
+    }
     public function search(Request $request)
     {
         $course = $request->query('course');
