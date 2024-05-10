@@ -11,12 +11,14 @@
 <a href="{{ route('dashboard') }}" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
-    <form action="{{route('threads.destroy',$thread->id)}}" method="post">
+    @if(Auth::user()->id == $thread->user->id)
+    <form action="{{ route('threads.destroy', $thread->id) }}" method="post">
         @csrf
         @method('delete')
-        <a href="{{route('threads.edit',$thread->id)}}" class="bg-red-600 p-2 text-white rounded">Edit Post</a>
-        <button class="bg-red-600 p-2 text-white rounded">Delete Post</button>
+        <a href="{{ route('threads.edit', $thread->id) }}" class="bg-red-600 p-2 text-white rounded">Edit Post</a>
+        <button type="submit" class="bg-red-600 p-2 text-white rounded">Delete Post</button>
     </form>
+    @endif
 
 
     <div class="bg-gray-50 border border-gray-200 p-10 rounded">
