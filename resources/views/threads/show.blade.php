@@ -26,8 +26,8 @@
         <div class="flex flex-col">
             <div class="flex flex-row">
                 <img class="w-24 mr-2 mb-2" src="{{ asset($collegelogo) }}" alt="" />
-                <h3 class="text-2xl mb-2">{{ $college }}</h3>
-                <div class="text-xl font-bold mb-4">{{ $thread->user->course }} - {{ $thread->user->yearlevel }}</div>
+                <h3 class="text-2xl mb-2">{{ $college }} </h3>
+                <p class="text-base font-bold ml-2">{{$thread->user->course }} - {{ $thread->user->yearlevel }}</p>
             </div>
 
             <h2 class="text-xl font-bold">{{ $thread->title }}</h2>
