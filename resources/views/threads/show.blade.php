@@ -11,6 +11,7 @@
 <a href="{{ route('dashboard') }}" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
+    @auth
     @if(Auth::user()->id == $thread->user->id)
     <form action="{{ route('threads.destroy', $thread->id) }}" method="post">
         @csrf
@@ -19,7 +20,7 @@
         <button type="submit" class="bg-red-600 p-2 text-white rounded">Delete Post</button>
     </form>
     @endif
-
+    @endauth
 
     <div class="bg-gray-50 border border-gray-200 p-10 rounded">
         <div class="flex flex-col">
@@ -33,7 +34,9 @@
             <p class="text-base mb-6" style="overflow-wrap: break-word;">{{ $thread->content }}</p>
             <small class="font-italic">{{ $thread->created_at }}</small>
             <div class="border border-gray-200 w-full mb-6"></div>
+            @auth
             @include('shared.comments-box')
+            @endauth
         </div>
     </div>
 
