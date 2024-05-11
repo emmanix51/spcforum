@@ -49,8 +49,9 @@ break;
             <div class="text-xl font-bold mb-4">{{$thread->user->course}} - {{$thread->user->yearlevel}}</div>
             <h2 class="text-lg font-bold">{{$thread->title}}</h2>
             <p class="mb-2">{{ Str::limit($thread->content, 30, '...') }}</p>
-            <small class="font-italic">{{$thread->created_at}}</small>
-            <a href="{{route('threads.show',$thread->id)}}"><button class="p-2 bg-spcmain rounded-full text-white">View
+            <small class="font-italic">posted on: {{$thread->created_at}}</small>
+            <a href="{{route('threads.show',$thread->id)}}"><button
+                    class="p-2 bg-spcmain rounded text-white hover:bg-white hover:border-2 hover:text-black">View
                     full post -></button></a>
         </div>
     </div>
